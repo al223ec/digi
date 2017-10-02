@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Digitalent.Domain
+namespace DigitalentCooreApp.Domain
 {
     public class Class1
     {
