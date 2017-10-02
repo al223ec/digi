@@ -9,7 +9,7 @@ namespace Digitalent.Domain.DbEntities
         EXTERNAL, INTERNAL
     }
 
-    class Assignment
+    public class Assignment
     {
         public int ID { get; set; }
         public int ConsultantID { get; set; }

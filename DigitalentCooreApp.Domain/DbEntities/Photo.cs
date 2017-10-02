@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Digitalent.Domain.DbEntities
 {
-    class Photo
+    public class Photo
     {
         public int ID { get; set; }
         public int ConsultantID { get; set; }

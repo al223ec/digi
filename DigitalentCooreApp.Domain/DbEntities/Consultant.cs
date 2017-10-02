@@ -4,12 +4,10 @@ using System.Text;
 
 namespace Digitalent.Domain.DbEntities
 {
-    class Consultant
+    public class Consultant
     {
         public int ID { get; set; }
-        public int PhotoID { get; set; }
-
-
+        
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime BirthDate { get; set; }
@@ -19,8 +17,6 @@ namespace Digitalent.Domain.DbEntities
 
         //  public virtual ICollection<Skill> Skills { get; set; }
         public virtual ICollection<Assignment> Assignments { get; set; }
-
-        public virtual Photo Photo { get; set; }
 
     }
 }

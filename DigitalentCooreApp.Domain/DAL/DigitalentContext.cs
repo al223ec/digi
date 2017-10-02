@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Digitalent.Domain.DbEntities
 {
-    class DigitalentContext : DbContext
+    public class DigitalentContext : DbContext
     {
         public DbSet<Consultant> Consultants { get; set; }
         public DbSet<Assignment> Assignments { get; set; }
