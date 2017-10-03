@@ -46,6 +46,37 @@
         <dd>
             @Html.DisplayFor(model => model.ZipCode)
         </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Assignments)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Project name</th>
+                    <th>Assignment Type</th>
+                    <th>Assignment date</th>
+                    <th>Startdate</th>
+                </tr>
+                @foreach (var item in Model.Assignments)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Project.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AssignmentType)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AssignmentDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Project.StartDate)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
     </dl>
 </div>
 <div>

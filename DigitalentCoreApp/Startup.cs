@@ -23,6 +23,7 @@ namespace DigitalentCoreApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //AddDbContext method sets the service lifetime to Scoped by default 
             services.AddDbContext<DigitalentContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             

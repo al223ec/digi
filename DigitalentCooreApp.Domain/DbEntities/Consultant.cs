@@ -17,6 +17,7 @@ namespace Digitalent.Domain.DbEntities
 
         //  public virtual ICollection<Skill> Skills { get; set; }
         public virtual ICollection<Assignment> Assignments { get; set; }
+        public virtual Photo Photo { get; set; }
 
     }
 }
