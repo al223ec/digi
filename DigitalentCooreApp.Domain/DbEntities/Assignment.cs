@@ -6,7 +6,7 @@ namespace Digitalent.Domain.DbEntities
 {
     public enum AssignmentType
     {
-        EXTERNAL, INTERNAL
+        EXTERNAL, INTERNAL, FULLTIME
     }
 
     public class Assignment

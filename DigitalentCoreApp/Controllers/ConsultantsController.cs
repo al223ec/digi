@@ -28,9 +28,29 @@ namespace DigitalentCoreApp.Controllers
     //        Asynchronous code does introduce a small amount of overhead at run time, but for low traffic situations the performance hit is negligible, 
     //        while for high traffic situations, the potential performance improvement is substantial.
     //      In the following code, the async keyword, Task<T> return value, await keyword, and ToListAsync method make the code execute asynchronously.
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            return View(await _context.Consultants.ToListAsync());
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["CurrentFilter"] = searchString;
+
+            var consultants = from c in _context.Consultants
+                           select c;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                consultants = consultants.Where(c => c.LastName.Contains(searchString)
+                                       || c.FirstName.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    consultants = consultants.OrderByDescending(c => c.LastName);
+                    break;
+                default:
+                    consultants = consultants.OrderBy(c => c.LastName);
+                    break;
+            }
+
+            return View(await consultants.AsNoTracking().ToListAsync()); // query to list
         }
 
         // GET: Consultants/Details/5
