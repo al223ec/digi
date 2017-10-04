@@ -12,9 +12,10 @@ using System;
 namespace DigitalentCoreApp.Domain.Migrations
 {
     [DbContext(typeof(DigitalentContext))]
-    partial class DigitalentContextModelSnapshot : ModelSnapshot
+    [Migration("20171004152528_ComplexDataModel")]
+    partial class ComplexDataModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

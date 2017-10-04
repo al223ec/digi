@@ -12,9 +12,10 @@ using System;
 namespace DigitalentCoreApp.Domain.Migrations
 {
     [DbContext(typeof(DigitalentContext))]
-    partial class DigitalentContextModelSnapshot : ModelSnapshot
+    [Migration("20171004150048_MaxLengthOnNames")]
+    partial class MaxLengthOnNames
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -80,8 +81,6 @@ namespace DigitalentCoreApp.Domain.Migrations
                     b.Property<int>("ConsultantID");
 
                     b.Property<int>("SkillID");
-
-                    b.Property<int?>("SkillLevel");
 
                     b.HasKey("ID");
 

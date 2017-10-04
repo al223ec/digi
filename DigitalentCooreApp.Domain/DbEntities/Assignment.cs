@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace DigitalentCoreApp.Domain.DbEntities
@@ -17,6 +18,9 @@ namespace DigitalentCoreApp.Domain.DbEntities
 
         public AssignmentType? AssignmentType { get; set; }
 
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime AssignmentDate { get; set; }
 
         public virtual Project Project { get; set; }

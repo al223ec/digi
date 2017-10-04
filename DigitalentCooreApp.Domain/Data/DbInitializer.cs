@@ -12,7 +12,7 @@ namespace DigitalentCoreApp.Domain.Data
         public static void Initialize(DigitalentContext context)
         {
             // context.Database.EnsureDeleted();
-            context.Database.EnsureCreated();
+            // context.Database.EnsureCreated();
 
             if (context.Consultants.Any())
             {
@@ -37,6 +37,17 @@ namespace DigitalentCoreApp.Domain.Data
             }
             context.SaveChanges();
 
+            var photos = new Photo[consultants.Length];
+            for (int i = 0; i < consultants.Length; i++)
+            {
+                photos[i] = new Photo { ConsultantID = consultants[i].ID, Width = 250, Height = 250, Url= consultants[i].LastName };
+            }
+
+            foreach (Photo p in photos)
+            {
+                context.Photos.Add(p);
+            }
+            context.SaveChanges();
 
             var projects = new Project[]
             {
@@ -72,6 +83,44 @@ namespace DigitalentCoreApp.Domain.Data
             foreach (Assignment a in assignments)
             {
                 context.Assignments.Add(a);
+            }
+            context.SaveChanges();
+
+            var skills = new Skill[]
+            {
+            new Skill{Name="C#"},
+            new Skill{Name="Ruby"},
+            new Skill{Name="PHP"},
+            new Skill{Name="Java"},
+            new Skill{Name="javascript"},
+            new Skill{Name="css"},
+            new Skill{Name="scss"},
+            new Skill{Name="React"}
+            };
+            foreach (Skill s in skills)
+            {
+                context.Skills.Add(s);
+            }
+            context.SaveChanges();
+
+            var consultantSkills = new ConsultantSkill[]
+            {
+            new ConsultantSkill { ConsultantID = 1, SkillID = 1, SkillLevel = SkillLevel.PROFFESIONAL },
+            new ConsultantSkill { ConsultantID = 1, SkillID = 2, SkillLevel = SkillLevel.PROFFESIONAL },
+            new ConsultantSkill { ConsultantID = 1, SkillID = 3, SkillLevel = SkillLevel.PROFFESIONAL },
+            new ConsultantSkill { ConsultantID = 2, SkillID = 1, SkillLevel = SkillLevel.PROFFESIONAL },
+            new ConsultantSkill { ConsultantID = 2, SkillID = 4, SkillLevel = SkillLevel.BEGINNER },
+            new ConsultantSkill { ConsultantID = 2, SkillID = 5, SkillLevel = SkillLevel.BEGINNER },
+            new ConsultantSkill { ConsultantID = 3, SkillID = 1 },
+            new ConsultantSkill { ConsultantID = 4, SkillID = 2 },
+            new ConsultantSkill { ConsultantID = 4, SkillID = 1, SkillLevel = SkillLevel.BEGINNER },
+            new ConsultantSkill { ConsultantID = 5, SkillID = 2, SkillLevel = SkillLevel.PROFFESIONAL },
+            new ConsultantSkill { ConsultantID = 6, SkillID = 6 },
+            new ConsultantSkill { ConsultantID = 7, SkillID = 5, SkillLevel = SkillLevel.PROFFESIONAL },
+            };
+            foreach (ConsultantSkill c in consultantSkills)
+            {
+                context.ConsultantSkills.Add(c);
             }
             context.SaveChanges();
         }
