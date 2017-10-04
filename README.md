@@ -1,9 +1,10 @@
 
 ### Digitalent arbetsprov
 ## DIGITALENT – CASE FRONTEND
-# INTRODUKTION
+### INTRODUKTION
 Caset innebär att du ska skapa en webapplikation som gör det möjligt att på ett smidigt sätt
-hantera konsulter. Följande konsultinformation ska gå att ta fram i applikationen:
+hantera konsulter. 
+### Följande konsultinformation ska gå att ta fram i applikationen:
 	Namn
 	Ålder
 	Email
@@ -13,7 +14,8 @@ hantera konsulter. Följande konsultinformation ska gå att ta fram i applikatione
 	Information om personen har uppdrag eller ej
 
 
-# I APPLIKATIONEN SKA DET GÅ ATT:
+
+### I APPLIKATIONEN SKA DET GÅ ATT:
 	Se en lista med konsulter
 	Söka bland konsulter
 	Ta bort konsulter
@@ -22,14 +24,14 @@ hantera konsulter. Följande konsultinformation ska gå att ta fram i applikatione
 	Visa detalj-vy för en specifik konsult
 	Filtrera konsultlistan på kompetenser
 
-# ÖVRIGT
+### ÖVRIGT
 Backend kan lämpligen sättas upp med C# eller Node.js.
 Frontend kan sättas upp med lämpliga ramverk och tekniker.
 Lösningen bör vara responsiv och vi ger extra plus för styling, arkitektur, och innovation.
 
-in Digitalent\DigitalentCooreApp.Domain>
 
 ## Migrations
+in Digitalent\DigitalentCooreApp.Domain>
 dotnet ef --startup-project ../DigitalentCoreApp/ migrations add InitialCreate
 dotnet ef --startup-project ../DigitalentCoreApp/ database update 
 
