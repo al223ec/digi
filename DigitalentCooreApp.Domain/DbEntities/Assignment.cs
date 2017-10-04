@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Digitalent.Domain.DbEntities
+namespace DigitalentCoreApp.Domain.DbEntities
 {
     public enum AssignmentType
     {

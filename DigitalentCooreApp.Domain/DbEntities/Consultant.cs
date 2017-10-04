@@ -1,9 +1,8 @@
-﻿using DigitalentCoreApp.Domain.DbEntities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Digitalent.Domain.DbEntities
+namespace DigitalentCoreApp.Domain.DbEntities
 {
     public class Consultant
     {

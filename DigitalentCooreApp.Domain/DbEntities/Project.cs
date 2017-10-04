@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace Digitalent.Domain.DbEntities
+namespace DigitalentCoreApp.Domain.DbEntities
 {
     public class Project
     {

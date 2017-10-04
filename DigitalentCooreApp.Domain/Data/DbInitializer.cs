@@ -1,4 +1,5 @@
-﻿using Digitalent.Domain.DbEntities;
+﻿using DigitalentCoreApp.Domain.DAL;
+using DigitalentCoreApp.Domain.DbEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
