@@ -37,6 +37,8 @@ namespace DigitalentCoreApp.Controllers
         {
             ViewData["CurrentSort"] = sortOrder;
             ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["SkillSortParm"] = String.IsNullOrEmpty(sortOrder) ? "skill_desc" : "";
+
             ViewData["CurrentFilter"] = searchString;
 
             if (searchString != null)
@@ -47,7 +49,7 @@ namespace DigitalentCoreApp.Controllers
             {
                 searchString = currentFilter;
             }
-            var consultants = from c in _context.Consultants
+            var consultants = from c in _context.Consultants.Include(c => c.Assignments).Include(c => c.ConsultantSkills).ThenInclude(cs => cs.Skill)
                               select c;
             if (!String.IsNullOrEmpty(searchString))
             {

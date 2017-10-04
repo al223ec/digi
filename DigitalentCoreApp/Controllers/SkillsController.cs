@@ -22,7 +22,7 @@ namespace DigitalentCoreApp.Controllers
         // GET: Skills
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Skills.ToListAsync());
+            return View(await _context.Skills.Include(s => s.ConsultantSkills).ThenInclude(cs => cs.Consultant).ToListAsync());
         }
 
         // GET: Skills/Details/5
@@ -33,7 +33,7 @@ namespace DigitalentCoreApp.Controllers
                 return NotFound();
             }
 
-            var skill = await _context.Skills
+            var skill = await _context.Skills.Include(s => s.ConsultantSkills).ThenInclude(cs => cs.Consultant)
                 .SingleOrDefaultAsync(m => m.ID == id);
             if (skill == null)
             {

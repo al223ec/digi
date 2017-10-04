@@ -35,10 +35,10 @@
                     Phone
                 </th>
                 <th>
-                    Adress
+                    Assignments
                 </th>
                 <th>
-                    ZipCode
+                    Skills
                 </th>
             <th></th>
         </tr>
@@ -59,10 +59,19 @@
                         @Html.DisplayFor(modelItem => item.Phone)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Adress)
+                        @item.Assignments.Count 
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.ZipCode)
+                        <ul>
+                        @foreach (var consultantSkill in item.ConsultantSkills)
+                        {
+                            <li>
+                                <a asp-controller="Skills" asp-action="Details" asp-route-id="@consultantSkill.SkillID">
+                                    @Html.DisplayFor(modelItem => consultantSkill.Skill.Name)
+                                </a>
+                            </li>
+                        }
+                        </ul>
                     </td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
