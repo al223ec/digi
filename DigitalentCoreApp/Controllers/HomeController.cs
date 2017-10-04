@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using DigitalentCoreApp.Models;
-using Digitalent.Domain.DbEntities;
 using DigitalentCoreApp.Models.ConsultProjectViewModels;
 using Microsoft.EntityFrameworkCore;
+using DigitalentCoreApp.Domain.DAL;
 
 namespace DigitalentCoreApp.Controllers
 {

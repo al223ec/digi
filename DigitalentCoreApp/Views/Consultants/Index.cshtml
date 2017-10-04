@@ -1,13 +1,13 @@
-﻿@model PaginatedList<Digitalent.Domain.DbEntities.Consultant>
+﻿@model PaginatedList<DigitalentCoreApp.Domain.DbEntities.Consultant>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Consultants";
 }
 
-<h2>Index</h2>
+<h2>Consultants</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Create a New Consultant</a>
 </p>
 <form asp-action="Index" method="get">
     <div class="form-actions no-color">

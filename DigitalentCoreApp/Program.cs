@@ -8,8 +8,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
-using Digitalent.Domain.DbEntities;
 using DigitalentCoreApp.Domain.Data;
+using DigitalentCoreApp.Domain.DAL;
 
 namespace DigitalentCoreApp
 {

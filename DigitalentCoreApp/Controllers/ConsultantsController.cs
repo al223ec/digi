@@ -5,14 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Digitalent.Domain.DbEntities;
+using DigitalentCoreApp.Domain;
+using DigitalentCoreApp.Domain.DbEntities;
+using DigitalentCoreApp.Domain.DAL;
 
 namespace DigitalentCoreApp.Controllers
 {
     public class ConsultantsController : Controller
     {
         private readonly DigitalentContext _context;
-
         public ConsultantsController(DigitalentContext context)
         {
             _context = context;
@@ -46,10 +47,8 @@ namespace DigitalentCoreApp.Controllers
             {
                 searchString = currentFilter;
             }
-
-
             var consultants = from c in _context.Consultants
-                           select c;
+                              select c;
             if (!String.IsNullOrEmpty(searchString))
             {
                 consultants = consultants.Where(c => c.LastName.Contains(searchString)
@@ -65,8 +64,8 @@ namespace DigitalentCoreApp.Controllers
                     break;
             }
 
-            int pageSize = 3;
-            return View(await PaginatedList<Consultant>.CreateAsync(consultants.AsNoTracking(), page ?? 1, pageSize));// query to list
+            int pageSize = 9;
+            return View(await PaginatedList<Consultant>.CreateAsync(consultants.AsNoTracking(), page ?? 1, pageSize)); // ; // query to list
         }
 
         // GET: Consultants/Details/5
@@ -78,8 +77,9 @@ namespace DigitalentCoreApp.Controllers
             }
 
             var consultant = await _context.Consultants
-                .Include(c => c.Assignments)
-                .ThenInclude(a => a.Project)
+                .Include(c => c.Photo)
+                .Include(c => c.ConsultantSkills).ThenInclude(cs => cs.Skill)
+                .Include(c => c.Assignments).ThenInclude(a => a.Project)
                 .AsNoTracking()
                 .SingleOrDefaultAsync(m => m.ID == id);
   

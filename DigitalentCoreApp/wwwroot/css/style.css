@@ -1,0 +1,203 @@
+﻿/*!
+ * Start Bootstrap - Grayscale v4.0.0-beta (http://startbootstrap.com/template-overviews/grayscale)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-grayscale/blob/master/LICENSE)
+
+ A font fabric font - http://fontfabric.com/lovelo-font/
+*/
+
+@font-face {
+    font-family: 'Lovelo';
+    src: url('../fonts/loveloblack.otf');
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Lovelo', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 35px;
+}
+
+h1 {
+    letter-spacing: 2px;
+    font-size: 110px;
+    line-height: 110px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 0 25px;
+}
+
+@media (min-width: 768px) {
+    p {
+        font-size: 18px;
+        line-height: 1.6;
+        margin: 0 0 35px;
+    }
+}
+
+a {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    color: #1e90ff;
+}
+
+    a:focus, a:hover {
+        text-decoration: none;
+        color: #1d9b6c;
+    }
+
+#mainNav {
+    font-family: 'Lovelo', sans-serif;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    background-color: black;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+    #mainNav .navbar-toggler {
+        font-size: 14px;
+        padding: 11px;
+        color: white;
+        border: 1px solid white;
+    }
+
+    #mainNav .navbar-brand {
+        font-weight: 700;
+    }
+
+    #mainNav a {
+        color: white;
+    }
+
+    #mainNav .navbar-nav .nav-item {
+        -webkit-transition: background 0.3s ease-in-out;
+        -moz-transition: background 0.3s ease-in-out;
+        transition: background 0.3s ease-in-out;
+    }
+
+        #mainNav .navbar-nav .nav-item:hover {
+            color: fade(white, 80%);
+            outline: none;
+            background-color: transparent;
+        }
+
+        #mainNav .navbar-nav .nav-item:active, #mainNav .navbar-nav .nav-item:focus {
+            outline: none;
+            background-color: transparent;
+        }
+
+@media (min-width: 992px) {
+    #mainNav {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        -webkit-transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
+        -moz-transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
+        transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
+        letter-spacing: 1px;
+    }
+
+        #mainNav.navbar-shrink {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            background: black;
+        }
+
+        #mainNav .nav-link.active {
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+            #mainNav .nav-link.active:hover {
+                color: white;
+            }
+}
+
+
+
+.masthead {
+    display: table;
+    width: 100%;
+    height: auto;
+    padding: 200px 0;
+    text-align: center;
+    color: white;
+    /*background: url("../img/333h.jpg") no-repeat bottom center scroll;*/
+    /*background: url("../img/intro-bg.png") no-repeat bottom center scroll;*/
+    background: url("../img/black.jpg") no-repeat bottom center scroll;
+    background-color: black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /*position: relative;*/
+}
+
+    .masthead .intro-body {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+        .masthead .intro-body .brand-heading {
+            font-size: 50px;
+        }
+
+        .masthead .intro-body .intro-text {
+            font-size: 18px;
+        }
+/*.masthead .video-texture {
+    height: 3000px;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    z-index: 10;
+  }*/
+
+@media (min-width: 768px) {
+    .masthead {
+        height: 100%;
+        padding: 0;
+    }
+
+        .masthead .intro-body .brand-heading {
+            font-size: 100px;
+        }
+
+        .masthead .intro-body .intro-text {
+            font-size: 22px;
+        }
+}
+
+.content-section {
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
+.body-content {
+    padding-top: 90px;
+}
+

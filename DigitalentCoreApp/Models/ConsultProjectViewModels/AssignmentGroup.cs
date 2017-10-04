@@ -1,4 +1,4 @@
-﻿using Digitalent.Domain.DbEntities;
+﻿using DigitalentCoreApp.Domain.DbEntities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

@@ -14,6 +14,9 @@
         <th>
             Consultants
         </th>
+        <th>
+           Project Start date
+        </th>
     </tr>
 
     @foreach (var item in Model)
@@ -24,6 +27,9 @@
             </td>
             <td>
                 @item.ConsultantCount
+            </td>
+            <td>
+                @item.Project.StartDate
             </td>
         </tr>
     }
