@@ -1,16 +1,19 @@
-﻿@model IEnumerable<DigitalentCoreApp.Domain.DbEntities.Skill>
+﻿@model IEnumerable<DigitalentCoreApp.Domain.DbEntities.Project>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>Projects</h2>
 
 <table class="table">
     <thead>
         <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.StartDate)
                 </th>
             <th></th>
         </tr>
@@ -20,6 +23,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
             </td>
             <td>
                 <a asp-action="Details" asp-route-id="@item.ID">Details</a>
